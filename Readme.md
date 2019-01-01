@@ -1,5 +1,7 @@
 # 100 days of code
 
+an app about 100 days of code.
+
 ```
 - CurrentCountdownActivity
     > 00/100
