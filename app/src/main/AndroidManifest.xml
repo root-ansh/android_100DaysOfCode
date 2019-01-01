@@ -18,6 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".NotifActionClickReciever">
+            <intent-filter>
+                <action android:name="ACTION_YES" />
+                <action android:name="ACTION_NO" />
+
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
