@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@android:color/white"
+
+    tools:context=".CurrentStreakActivity"
+    tools:ignore="SpUsage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="8dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textSize="16dp"
+                android:text="Last checkin : "/>
+            <TextView
+                android:id="@+id/tv_lastcheckin"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textSize="16dp"
+                android:text="Jan 1 2019" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textSize="16dp"
+                android:text="Started : "/>
+            <TextView
+                android:id="@+id/tv_startdate"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:fontFamily="@font/luckiestguy"
+                android:textSize="16dp"
+                android:text="Jan 1 2019" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_counter"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+
+            android:padding="8dp"
+            android:textColor="@color/colorAccent"
+
+            android:fontFamily="@font/luckiestguy"
+            android:textSize="48dp"
+            android:textStyle="bold"
+            tools:text="00 / 100" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="8dp"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Layout to be displayed, when "done for today" key has false as value-->
+                <LinearLayout
+                    android:id="@+id/layout_resp_false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_question"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:text="Have You Coded For Atleast 1 hour Today?" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/bt_user_resp_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+
+                            android:fontFamily="@font/luckiestguy"
+                            android:text="yes"
+                            android:textColor="@color/colorPrimary"
+
+                            />
+
+                        <Button
+                            android:id="@+id/bt_user_resp_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+
+                            android:fontFamily="@font/luckiestguy"
+                            android:text="no"
+                            android:textColor="@color/colorPrimary"
+
+                            />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Layout to be displayed, when "done for today" key has True as value-->
+                <LinearLayout
+                    android:id="@+id/layout_resp_true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="16dp"
+                        android:background="@color/colorAccent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_check_purple" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:text="You are awesome! keep coding and spreading the love for opensource!" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--Another linear layout, the one with great quotes to show, will be shown every tme
+                 "no" is clicked, and with a 'more' button-->
+                <!--todo-->
+
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/bt_fab_share"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="auto"
+
+        android:src="@drawable/ic_share_white"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintVertical_bias="0.96"
+        />
+
+</android.support.constraint.ConstraintLayout>
