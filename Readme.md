@@ -18,6 +18,8 @@ an app about 100 days of code.
 
         on clicking no. it will change the box to keep coding! with a snackbar " we will keep reminding you every for
         hours for the same" and undo button
+    > edit button : to change all the current steaks info in a bottom sheet
+    > motivation quotes recycler view
 
 - settings in menubar
     > open settings activity( control reminder delay setting, other settings)
@@ -33,7 +35,8 @@ an app about 100 days of code.
       pressing share button, shares card and text with social media
 
 
-- startCoundownActivity
+- startCoundownActivity (DashBoardActivity)
+    > current streak card
     > history menu: a small card like box with last streaks and more button. on clicking more,  can open
       complete history activity
     > start a new streak menu: a bunch of check boxes and edit texts to get details for new streak and

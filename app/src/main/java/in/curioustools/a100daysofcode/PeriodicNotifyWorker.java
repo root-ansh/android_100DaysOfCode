@@ -1,4 +1,4 @@
-package in.curioustools.a100daysofcode.WorkManager;
+package in.curioustools.a100daysofcode;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -17,11 +17,6 @@ import android.util.Log;
 
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
-import in.curioustools.a100daysofcode.CurrentStreakActivity;
-import in.curioustools.a100daysofcode.MainActivity;
-import in.curioustools.a100daysofcode.NotifActionClickReciever;
-import in.curioustools.a100daysofcode.R;
-import in.curioustools.a100daysofcode.Statics;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
@@ -36,21 +31,19 @@ public class PeriodicNotifyWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        Log.e(TAG, "doWork: called" );
+//        Log.e(TAG, "doWork: called" );
 
         SharedPreferences sp =
-                getApplicationContext().getSharedPreferences(Statics.SP_FILENAME, Context.MODE_PRIVATE);
-        String lastcheckin = sp.getString(Statics.LAST_CHECKIN_DATE_str, Statics.getToday());
-        Log.e(TAG, "doWork: checking shared preferences for last checkin:"+lastcheckin );
+                getApplicationContext().getSharedPreferences(Statics.SP_NAME, Context.MODE_PRIVATE);
+        String lastcheckin = sp.getString(Statics.LAST_CHECKIN_DATE_r_str, Statics.NOT_SET);
+//        Log.e(TAG, "doWork: checking shared preferences for last checkin:"+lastcheckin );
 
-        if (Statics.compareDateStrings(lastcheckin, Statics.getToday()) == -1) {
+        if (Statics.compareDateStrings(lastcheckin, Statics.getTodayString()) == -1) {
             Log.e(TAG, "doWork: last checkin is smaller than today's date, so calling creating notification" );
-
             return createNotificationWithButtons(sp);
         }
         else {
-            Log.e(TAG, "doWork: last checkin is bigger than today's date, so calling success" );
-
+            Log.e(TAG, "doWork: last checkin is bigger than today's date, so no need for notif" );
             return Result.success();
         }
     }
@@ -59,19 +52,17 @@ public class PeriodicNotifyWorker extends Worker {
     private Result createNotificationWithButtons(SharedPreferences sp) {
         NotificationManager manager =
                 (NotificationManager) getApplicationContext().getSystemService((NOTIFICATION_SERVICE));
-
+        String channel_ID = "100DaysOfCode_ID";
         if (manager != null) {
-
-            String channel_ID = "100DaysOfCode_ID";
             setNotificationChannel(manager,channel_ID);
             showNotif(manager, channel_ID, sp);
             return Result.success();
         }
         else {
-
             return Result.failure();
         }
     }
+
 
     private void setNotificationChannel(NotificationManager notifManager, String channel_ID) {
         Log.e(TAG, "setNotificationChannel: called");
@@ -104,8 +95,8 @@ public class PeriodicNotifyWorker extends Worker {
         notifManager.cancelAll();
 
         String title = " Day : " +
-                (sp.getInt(Statics.CURRENT_STREAK_COUNT_str, 0) + 1) + " / " +
-                (sp.getInt(Statics.TOTAL_STREAK_COUNT_str, 100));
+                (sp.getInt(Statics.CURRENT_STREAK_COUNT_r_int, 0) + 1) + " / " +
+                (sp.getInt(Statics.MAX_STREAK_COUNT_r_int, 100));
         String subtitle = " Have you coded for at least 1 hour Today?";
         String tickerData = subtitle;
         int notifID = 103;
@@ -138,7 +129,7 @@ public class PeriodicNotifyWorker extends Worker {
         int notifRequestCode = 147;
 
         if (source == PI.NOTIF) {
-            Intent intent = new Intent(getApplicationContext(), CurrentStreakActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             resultPI = PendingIntent.getActivity(getApplicationContext(), notifRequestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         } else if (source == PI.ACTION_YES) {
 

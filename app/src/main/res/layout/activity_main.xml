@@ -1,18 +1,521 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/layout_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_grad_purple_uncurved"
+        android:paddingTop="50dp"
+        android:animateLayoutChanges="true"
+
+
+        >
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+
+            android:animateLayoutChanges="true"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:animateLayoutChanges="true"
+
+                >
+
+                <android.support.constraint.ConstraintLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/bg_curved_white"
+                    android:elevation="5dp"
+                    android:padding="8dp"
+
+                    tools:ignore="ContentDescription,ButtonStyle,HardcodedText"
+                    android:animateLayoutChanges="true"
+
+                    >
+                    <TextView
+                        android:id="@+id/text_ttitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:clickable="true"
+                        android:focusable="true"
+
+                        android:gravity="center"
+
+                        android:text="#100DaysofCode"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/luckiestguy"
+
+                        android:drawableEnd="@drawable/ic_edit_purple"
+
+                        android:drawablePadding="10dp"
+                        android:paddingTop="8dp"
+                        android:paddingEnd="10dp"
+                        android:paddingStart="10dp"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/tmp_root_left"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintBottom_toBottomOf="@id/tmp_divider_centre"
+                        app:layout_constraintEnd_toStartOf="@id/tmp_divider_centre"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="@id/text_ttitle"
+                        app:layout_constraintTop_toBottomOf="@id/text_ttitle"
+                        app:layout_constraintVertical_bias="0"
+
+                        android:animateLayoutChanges="true"
+
+
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/temp_ll_lci"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            android:layout_margin="8dp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0"
+
+                            android:animateLayoutChanges="true"
+
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="Started: "
+                                android:textSize="14sp"
+                                android:fontFamily="@font/luckiestguy"
+
+                                />
+                            <TextView
+                                android:id="@+id/text_date_started"
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+
+                                android:text="Jan 8 2018"
+                                android:gravity="center|start"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/luckiestguy"
+
+                                />
+
+                        </LinearLayout>
+
+
+
+                        <TextView
+                            android:id="@+id/text_total_counter"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="00 / 100"
+                            android:textColor="@color/black"
+                            android:textSize="42sp"
+                            android:fontFamily="@font/luckiestguy"
+
+                            app:layout_constraintEnd_toEndOf="@id/temp_ll_lci"
+                            app:layout_constraintHorizontal_bias="0.1"
+                            app:layout_constraintStart_toStartOf="@id/temp_ll_lci"
+                            app:layout_constraintTop_toBottomOf="@id/temp_ll_lci"
+                            app:layout_constraintVertical_bias="0"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/tmp_ll_miss"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            android:background="@drawable/bg_grad_red"
+
+                            app:layout_constraintEnd_toEndOf="@id/text_total_counter"
+                            app:layout_constraintHorizontal_bias="0.6"
+                            app:layout_constraintStart_toStartOf="@id/text_total_counter"
+                            app:layout_constraintTop_toBottomOf="@id/text_total_counter"
+                            app:layout_constraintVertical_bias="0"
+
+                            android:animateLayoutChanges="true"
+
+                            >
+
+
+                            <ImageButton
+
+                                android:id="@+id/bt_im_inc_missed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_plus_white_circle"
+
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+
+                                 />
+
+
+                            <TextView
+                                android:id="@+id/text_missed_counter"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+
+                                android:layout_gravity="center"
+                                android:gravity="center"
+
+                                android:text="20"
+                                android:textColor="@color/white"
+                                android:textSize="24sp"
+
+                                android:textStyle="bold"
+                                android:fontFamily="@font/luckiestguy"
+
+                                />
+
+
+                            <ImageButton
+                                android:id="@+id/bt_im_dec_missed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_minus_white"
+
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+
+                                />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+
+
+                            android:fontFamily="@font/luckiestguy"
+                            android:text="Missed"
+                            android:textColor="@color/red"
+                            android:textSize="16sp"
+
+                            app:layout_constraintEnd_toEndOf="@id/tmp_ll_miss"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="@id/tmp_ll_miss"
+                            app:layout_constraintTop_toBottomOf="@id/tmp_ll_miss"
+                            app:layout_constraintVertical_bias="0"
+
+                             />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tmp_divider_centre"
+                        android:layout_width="2dp"
+                        android:layout_height="100dp"
+
+                        android:background="@drawable/bg_grad_pink_yellow"
+
+
+                        app:layout_constraintBottom_toBottomOf="@id/tmp_root_right"
+                        app:layout_constraintEnd_toStartOf="@id/tmp_root_right"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/tmp_root_left"
+                        app:layout_constraintTop_toBottomOf="@id/text_ttitle"
+                        app:layout_constraintVertical_bias="0.5"
+
+
+                        />
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/tmp_root_right"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        app:layout_constraintBottom_toBottomOf="@id/tmp_divider_centre"
+                        app:layout_constraintEnd_toEndOf="@id/text_ttitle"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@id/tmp_divider_centre"
+                        app:layout_constraintTop_toBottomOf="@id/text_ttitle"
+                        app:layout_constraintVertical_bias="0"
+
+                        android:animateLayoutChanges="true"
+
+
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/temp_ll_st"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+
+                            android:layout_margin="8dp"
+
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0"
+
+                            android:animateLayoutChanges="true"
+
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="Updated on: "
+                                android:textSize="14sp"
+                                android:textColor="@color/colorAccent"
+
+                                android:fontFamily="@font/luckiestguy"
+
+                                />
+                            <TextView
+                                android:id="@+id/text_date_updated_on"
+
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+
+                                android:text="Jan 8 2018"
+                                android:textSize="15sp"
+                                android:textColor="@color/colorAccent"
+                                android:fontFamily="@font/luckiestguy"
+
+                                android:gravity="start|center"
+
+
+                                />
+
+                        </LinearLayout>
+
+
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_user_response"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            android:visibility="gone"
+
+                            android:layout_margin="8dp"
+
+
+                            app:layout_constraintEnd_toEndOf="@id/temp_ll_st"
+                            app:layout_constraintStart_toStartOf="@id/temp_ll_st"
+                            app:layout_constraintTop_toBottomOf="@id/temp_ll_st"
+
+                            android:animateLayoutChanges="true"
+
+
+                            >
+
+                            <TextView
+                                android:id="@+id/temp_text_question"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:text="Have You Coded For Atleast 1 hour Today?"
+                                android:textColor="@color/black"
+
+                                android:fontFamily="@font/luckiestguy"
+                                 />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+
+                                android:animateLayoutChanges="true"
+
+                                >
+
+
+                                <Button
+                                    android:id="@+id/bt_coded_yes"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+
+                                    android:gravity="start|center"
+
+                                    android:background="@drawable/bg_grad_green"
+
+                                    android:text="Yes  "
+                                    android:textColor="@color/white"
+                                    android:textSize="24sp"
+
+                                    android:fontFamily="@font/luckiestguy"
+
+                                    android:padding="8dp"
+                                    android:layout_margin="4dp"
+
+                                    
+                                    />
+
+                                <Button
+                                    android:id="@+id/bt_coded_no"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+
+                                    android:gravity="start|center"
+
+                                    android:background="@drawable/bg_grad_purple"
+
+                                    android:text="No   "
+                                    android:textColor="@color/white"
+                                    android:textSize="24sp"
+
+                                    android:fontFamily="@font/luckiestguy"
+
+                                    android:padding="8dp"
+                                    android:layout_margin="4dp"
+
+                                    
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_share"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+
+                            android:orientation="vertical"
+                            android:visibility="visible"
+
+                            app:layout_constraintEnd_toEndOf="@id/layout_user_response"
+                            app:layout_constraintStart_toStartOf="@id/layout_user_response"
+                            app:layout_constraintTop_toBottomOf="@id/layout_user_response"
+
+                            android:animateLayoutChanges="true"
+
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:gravity="center"
+
+                                android:text="You are awesome! keep coding and spreading the love for opensource!"
+                                android:fontFamily="@font/luckiestguy"
+                                 />
+
+
+                            <Button
+                                android:id="@+id/bt_share"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_gravity="end"
+                                android:gravity="center"
+
+                                android:text="Share"
+                                android:textColor="@color/white"
+                                android:textSize="24sp"
+
+                                android:fontFamily="@font/luckiestguy"
+
+                                android:background="@drawable/bg_grad_blue"
+                                android:drawableEnd="@drawable/ic_send_white"
+
+                                android:drawablePadding="16dp"
+                                android:layout_margin="8dp"
+                                android:padding="8dp"
+                                 />
+
+                        </LinearLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_quotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:paddingStart="8dp"
+                    android:paddingTop="24dp"
+                    android:paddingEnd="8dp"
+
+                    android:layout_marginBottom="40dp"
+                    >
+
+
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.constraint.ConstraintLayout>
+
+    <include layout="@layout/layout_bottomsheet_settings" />
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+
+
+

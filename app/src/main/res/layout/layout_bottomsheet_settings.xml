@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/layout_bottomsheet_settings"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_margin="8dp"
+    android:background="@drawable/bg_bottomsheet_white"
+    android:orientation="vertical"
+
+    android:padding="8dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="58dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:orientation="horizontal"
+
+                >
+                <android.support.design.widget.TextInputLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:focusable="true"
+                    
+
+                    app:boxBackgroundMode="outline"
+
+                    android:textColorHint="@color/colorPrimary"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:hintTextAppearance="@style/bottomsheet_settings_hinttext_style"
+
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    >
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/lbs_et_streak_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:focusable="true"
+                        
+                        android:inputType="textShortMessage"
+
+                        android:maxLength="30"
+                        android:maxLines="1"
+
+
+                        android:hint="Streak Title"
+                        android:imeOptions="actionDone"
+
+                        android:textColor="#000000"
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:gravity="start"
+                        />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                    <!-- use attribute  app:boxBackgroundMode="outline"
+                    or style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+
+
+                <ImageButton
+                    android:id="@+id/lbs_bt_im_close"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_black_circle_filled"
+
+                    android:src="@drawable/ic_save_white"
+                    android:scaleType="center"
+
+                    android:padding="4dp"
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:focusable="true"
+                    
+
+                    app:boxBackgroundMode="outline"
+
+                    android:textColorHint="@color/colorPrimary"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:hintTextAppearance="@style/bottomsheet_settings_hinttext_style"
+
+                    app:counterEnabled="true"
+                    app:counterMaxLength="3"
+                    >
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/lbs_et_current_streak"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:focusable="true"
+                        
+
+                        android:maxLength="3"
+                        android:maxLines="1"
+
+                        android:inputType="number"
+                        android:digits="0123456789"
+
+                        android:text="00"
+                        android:hint="Curr. Streak"
+                        android:imeOptions="actionDone"
+
+                        android:textColor="#000000"
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:gravity="start"
+                        />
+
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:focusable="true"
+                    
+
+                    app:boxBackgroundMode="outline"
+
+                    android:textColorHint="@color/colorPrimary"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:hintTextAppearance="@style/bottomsheet_settings_hinttext_style"
+
+                    app:counterEnabled="true"
+                    app:counterMaxLength="3"
+                    >
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/lbs_et_max_streak"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:focusable="true"
+                        
+
+                        android:maxLength="3"
+                        android:maxLines="1"
+
+                        android:inputType="number"
+                        android:digits="0123456789"
+
+                        android:text="00"
+                        android:hint="Max Streak"
+                        android:imeOptions="actionDone"
+
+                        android:textColor="#000000"
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:gravity="start"
+                        />
+
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:focusable="true"
+                    
+
+                    app:boxBackgroundMode="outline"
+
+                    android:textColorHint="@color/colorPrimary"
+                    app:boxStrokeColor="@color/colorPrimary"
+                    app:hintTextAppearance="@style/bottomsheet_settings_hinttext_style"
+
+                    app:counterEnabled="true"
+                    app:counterMaxLength="3"
+                    >
+                    <!-- app:hintTextAppearance has a style that will make its hint color static-->
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/lbs_et_missed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:focusable="true"
+                        
+
+                        android:maxLength="3"
+                        android:maxLines="1"
+
+                        android:inputType="number"
+                        android:digits="0123456789"
+
+                        android:text="00"
+                        android:hint="Missed"
+                        android:imeOptions="actionDone"
+
+                        android:textColor="#000000"
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:gravity="start"
+                         />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="4dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:text="Start Date"
+                        android:textSize="12dp"
+                        android:textColor="@color/colorPrimary"
+
+                        android:layout_marginBottom="4dp"
+
+
+                        />
+
+                    <TextView
+                        android:id="@+id/lbs_text_startDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/bg_outline_grey"
+                        android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+
+                        android:focusable="true"
+                        android:clickable="true"
+                        
+                        android:fontFamily="@font/luckiestguy"
+
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:text="12/1/1985"
+
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+
+                        android:layout_marginStart="4dp"
+                        android:padding="8dp"
+
+                        />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="4dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:text="Last Checkin"
+                        android:textSize="12dp"
+
+                        android:textColor="@color/colorPrimary"
+
+                        android:layout_marginBottom="4dp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/lbs_text_lastcheckin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/bg_outline_grey"
+
+                        android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                        android:focusable="true"
+                        android:clickable="true"
+                        
+
+                        android:fontFamily="@font/luckiestguy"
+                        android:maxLength="30"
+                        android:maxLines="1"
+
+                        android:text="12/1/1985"
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+
+                        android:layout_marginStart="4dp"
+                        android:padding="8dp"
+
+                        />
+
+
+                </LinearLayout>
+                <!--change font family todo-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:layout_weight="1"
+
+                android:orientation="vertical"
+
+
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="Everyday Notifications"
+                    android:textSize="12dp"
+
+                    android:textColor="@color/colorPrimary" />
+
+                <RadioGroup
+                    android:id="@+id/lbs_rg_notif_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    android:padding="8dp"
+
+                    >
+
+                    <RadioButton
+                        android:id="@+id/lbs_rb_off"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:fontFamily="@font/luckiestguy"
+                        android:text="off" />
+
+                    <RadioButton
+                        android:id="@+id/lbs_rb_once_a_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:fontFamily="@font/luckiestguy"
+                        android:text="once a day" />
+
+                    <RadioButton
+                        android:id="@+id/lbs_rb_full_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:fontFamily="@font/luckiestguy"
+                        android:text="full day"
+
+                        />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/lbs_llnotifTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/luckiestguy"
+                        android:gravity="center"
+
+
+                        android:text="Set time :"
+                        android:textColor="#000"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/lbs_notif_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/bg_outline_grey"
+                        android:drawableEnd="@drawable/ic_arrow_drop_down_black"
+                        android:focusable="true"
+                        
+                        android:fontFamily="@font/luckiestguy"
+
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:text="00:00"
+
+                        android:textColor="#000000"
+                        android:textSize="12dp"
+                        android:gravity="start|center"
+
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingStart="32dp"
+                        android:paddingEnd="16dp"
+                        android:drawablePadding="16dp"
+
+
+
+
+                        android:layout_marginStart="8dp"
+
+
+                        />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lbs_text_notif_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:drawableStart="@drawable/ic_info_grey"
+                    android:fontFamily="@font/luckiestguy"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+
+                    android:text="Notification will be made  every 2 hours"
+                    android:textStyle="italic"
+
+                    android:padding="8dp"
+
+                    />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:drawableStart="@drawable/ic_info_grey"
+                android:fontFamily="@font/luckiestguy"
+                android:layout_gravity="center"
+
+                android:text="changes will be reflected after the settings are closed"
+                android:textStyle="italic"
+
+                android:padding="8dp"
+
+
+                />
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

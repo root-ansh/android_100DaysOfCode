@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="in.curioustools.a100daysofcode">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -8,23 +11,38 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".CurrentStreakActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".NotifActionClickReciever">
+
+        <receiver android:name=".NotifActionClickReciever"
+            android:exported="false">
             <intent-filter>
                 <action android:name="ACTION_YES" />
                 <action android:name="ACTION_NO" />
-
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".ShareProgressActivity"
+            android:parentActivityName=".MainActivity"
+            ></activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="in.curioustools.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
     </application>
 

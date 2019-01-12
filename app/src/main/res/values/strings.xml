@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">100 Days Of Code</string>
+
+    <string name="quote_left">“</string>
+    <string name="quote">\"</string>
+    <string name="quote_right">”</string>
+
 </resources>

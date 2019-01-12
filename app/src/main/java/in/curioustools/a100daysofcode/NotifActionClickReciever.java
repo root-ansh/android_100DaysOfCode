@@ -19,12 +19,12 @@ public class NotifActionClickReciever extends BroadcastReceiver {
 
         if (intent.getAction() != null && intent.getAction().equals(ACTION_YES)) {
             SharedPreferences sp =
-                    context.getSharedPreferences(Statics.SP_FILENAME, Context.MODE_PRIVATE);
+                    context.getSharedPreferences(Statics.SP_NAME, Context.MODE_PRIVATE);
 
-            int currStreak = sp.getInt(Statics.CURRENT_STREAK_COUNT_str, 0);
+            int currStreak = sp.getInt(Statics.CURRENT_STREAK_COUNT_r_int, 0);
             sp.edit()
-                    .putInt(Statics.CURRENT_STREAK_COUNT_str, currStreak + 1)
-                    .putString(Statics.LAST_CHECKIN_DATE_str, Statics.getToday())
+                    .putInt(Statics.CURRENT_STREAK_COUNT_r_int, currStreak + 1)
+                    .putString(Statics.LAST_CHECKIN_DATE_r_str, Statics.getTodayString())
                     .apply();
         }
         NotificationManager manager =
